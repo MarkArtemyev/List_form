@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Код</title>
+</head>
+<body>
+ 
+ 
+<button>Загрузить из TXT</button><br><br>
+<form>
+    <div>Производитель: </div><input type="text" name="city"><br><br>
+    <div>Наименование: </div><input type="text" name="location"><br><br>
+    <div>Цена: </div><input type="text" name="name"><br><br>
+    <div>Количество: </div><input type="text" name="telephone"><br><br>
+    <div>итого: </div><input type="text" name="comon">
+</form>
+ 
+ 
+<script>
+    document.querySelector('button').addEventListener('click',async ()=> {  // вешаем клик на кнопку
+        let form = document.forms[0],           // получаем ссылку на форму
+            answer = await fetch('data.txt'),  // посылаем запрос к файлу "myTXT.txt" и ждем ответ
+            data = await answer.text(),         // в качестве значения переменная data принимает содержимое файла "myTXT.txt"
+            arrayData = data.split`\n`;         // разбиваем содержимое data через символ новой строки "\n" и получаем массив
+ 
+        form.city.value = arrayData[0];       // присваиваем полю формы с name="city" новое значение разбитое через символы: пробел, тире, пробел (" - ")
+        form.location.value = arrayData[1].split` - `[1];   // аналогично, только со своим name
+        form.name.value = arrayData[2].split` - `[1];       // аналогично
+        form.telephone.value = arrayData[3].split` - `[1];  // аналогично
+        form.email.value = arrayData[4].split` - `[1];      // аналогично
+    });
+</script>
+ 
+ 
+</body>
+</html>

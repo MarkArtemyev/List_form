@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+  <html lang="ru">
+    <meta charset="utf-8">
+    <title>Код</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <body>
+        <form class="form" action="?action=save" name="myform" method="post">
+          
+          <div>
+            <label for="creater">Производитель</label><br>
+              <input type="text" id="lcreater" name="creater" placeholder="Производитель">
+          </div>
+          <div>
+            <label for="lname">Наименование</label><br>
+              <input type="text" id="tag" name="tag" placeholder="Наименование">
+          </div>
+          <div>
+            <label for="l2name">Цена</label><br>
+              <input type="text" id="price" name="price" placeholder="Цена">
+          </div>
+          
+            <label for="subject">Количество</label><br>
+              <input type="text" id="sum" name="sum" placeholder="Количество">
+          </div>
+            <button type="submit" value="save">Send</button>
+          </form>
+        <br>
+        <div class="res"></div>
+    <script src="script.js"></script>
+          </div>
+          <script>
+            document.getElementById("button").onclick = function (data,arrayData) {
+    delete data;
+    delete arrayData
+    alert ("Вы нажали кнопку.");
+}
+
+          </script>
+        </form>
+      </div>
+  </html>
+
+
